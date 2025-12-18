@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_gragh"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.plantwatering.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+        android:id="@+id/action_loginFragment_to_registerFragment"
+        app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.plantwatering.fragments.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.plantwatering.fragments.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_weatherInfoFragment"
+            app:destination="@id/weatherInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherInfoFragment"
+        android:name="com.example.plantwatering.fragments.WeatherInfoFragment"
+        android:label="fragment_weather_info"
+        tools:layout="@layout/fragment_weather_info" >
+        <action
+            android:id="@+id/action_weatherInfoFragment_to_soilInfoFragment"
+            app:destination="@id/soilInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/soilInfoFragment"
+        android:name="com.example.plantwatering.fragments.SoilInfoFragment"
+        android:label="fragment_soil_info"
+        tools:layout="@layout/fragment_soil_info" >
+        <action
+            android:id="@+id/action_soilInfoFragment_to_waterPumpFragment"
+            app:destination="@id/waterPumpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/waterPumpFragment"
+        android:name="com.example.plantwatering.fragments.WaterPumpFragment"
+        android:label="fragment_water_pump"
+        tools:layout="@layout/fragment_water_pump" >
+        <action
+            android:id="@+id/action_waterPumpFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+</navigation>

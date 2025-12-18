@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Plant Watering</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_username">Tên đăng nhập</string>
+    <string name="login_password">Mật khẩu</string>
+    <string name="button_login">ĐĂNG NHẬP</string>
+    <string name="button_register">ĐĂNG KÝ TÀI KHOẢN</string>
+    <string name="password_confirm_label">Nhập lại mật khẩu</string>
+    <string name="confirm">XÁC NHẬN</string>
+</resources>
