@@ -3,7 +3,9 @@
     <style name="Base.Theme.PlantWatering" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/purple_80</item>
+        <item name="colorSecondary">@color/purple_grey_80</item>
+        <item name="colorTertiary">@color/pink_80</item>
     </style>
-
     <style name="Theme.PlantWatering" parent="Base.Theme.PlantWatering" />
 </resources>

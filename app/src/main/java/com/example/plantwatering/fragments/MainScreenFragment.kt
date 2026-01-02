@@ -29,41 +29,30 @@ class MainScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnSend.setOnClickListener {
-            sendMqttMessage()
-        }
-
-        binding.toAirTempButton.setOnClickListener {
+        binding.toAirTempCard.setOnClickListener {
             val action = MainScreenFragmentDirections.actionMainScreenFragmentToAirTemperatureFragment()
             this.findNavController().navigate(action)
         }
 
-        binding.toAirHumidButton.setOnClickListener {
+        binding.toAirHumidCard.setOnClickListener {
             val action = MainScreenFragmentDirections.actionMainScreenFragmentToAirHumidityFragment()
             this.findNavController().navigate(action)
         }
 
-        binding.toSoilMoistButton.setOnClickListener {
+        binding.toSoilMoistCard.setOnClickListener {
             val action = MainScreenFragmentDirections.actionMainScreenFragmentToSoilMoistureFragment()
             this.findNavController().navigate(action)
         }
 
-        binding.toWaterPumpButton.setOnClickListener {
+        binding.toWaterPumpCard.setOnClickListener {
             val action = MainScreenFragmentDirections.actionMainScreenFragmentToWaterPumpFragment()
             this.findNavController().navigate(action)
         }
 
-        binding.toWaterLevelButton.setOnClickListener {
+        binding.toWaterLevelCard.setOnClickListener {
             val action = MainScreenFragmentDirections.actionMainScreenFragmentToWaterLevelFragment()
             this.findNavController().navigate(action)
         }
-    }
-
-    private fun sendMqttMessage() {
-        viewModel.publishMessage(
-            topic = "android/test",
-            message = "Hello from Android"
-        )
     }
 
     override fun onDestroyView() {

@@ -4,71 +4,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F2F9F1"
+    android:padding="20dp"
     tools:context=".fragments.MainScreenFragment">
 
     <TextView
-        android:id="@+id/text_input_placeholder"
+        android:id="@+id/tvHomeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Placeholder (Main Screen)"
+        android:layout_marginTop="20dp"
+        android:text="My Garden"
+        android:textColor="#1D431F"
         android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnSend"
-        android:layout_width="200dp"
+    <GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_input_placeholder"
-        android:text="Send MQTT" />
+        android:layout_marginTop="32dp"
+        android:columnCount="2"
+        android:rowCount="3"
+        app:layout_constraintTop_toBottomOf="@id/tvHomeTitle">
 
-    <Button
-        android:id="@+id/to_air_temp_button"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Air Temperature"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSend" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/toAirTempCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp" android:gravity="center" android:background="#FFFFFF">
+                <ImageView  android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_temp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Temp" android:textColor="#7D8C8D"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="28°C" android:textColor="#1D431F" android:textSize="18sp" android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/to_air_humid_button"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Air Humidity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/to_air_temp_button" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/toAirHumidCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp" android:gravity="center" android:background="#FFFFFF">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_humidity" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Humidity" android:textColor="#7D8C8D"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="65%" android:textColor="#1D431F" android:textSize="18sp" android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/to_soil_moist_button"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Soil Moisture"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/to_air_humid_button" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/toSoilMoistCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp" android:gravity="center" android:background="#FFFFFF">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_soil" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Soil" android:textColor="#7D8C8D"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="42%" android:textColor="#1D431F" android:textSize="18sp" android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/to_water_pump_button"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Water Pump"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/to_soil_moist_button" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/toWaterPumpCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp" android:gravity="center" android:background="#1D431F">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_power" app:tint="#FFFFFF"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Pump" android:textColor="#A5D6A7"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/to_water_level_button"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Water Level"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/to_water_pump_button" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/toWaterLevelCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center"
+                android:background="#FFFFFF">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_humidity"
+                    app:tint="#2196F3"/> 
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Water"
+                android:textColor="#7D8C8D"/>
+                <TextView
+                    android:id="@+id/tvHomeWaterValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="75%"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

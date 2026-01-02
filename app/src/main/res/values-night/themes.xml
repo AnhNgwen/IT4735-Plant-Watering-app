@@ -3,5 +3,8 @@
     <style name="Base.Theme.PlantWatering" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/purple_40</item>
+        <item name="colorSecondary">@color/purple_grey_40</item>
+        <item name="colorTertiary">@color/pink_40</item>
     </style>
 </resources>
