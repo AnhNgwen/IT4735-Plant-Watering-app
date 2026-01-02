@@ -6,11 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.plantwatering.databinding.FragmentWeatherInfoBinding
+import com.example.plantwatering.databinding.FragmentSplashScreenBinding
 
-class WeatherInfoFragment : Fragment() {
-
-    private var _binding: FragmentWeatherInfoBinding? = null
+class SplashScreenFragment : Fragment() {
+    private var _binding: FragmentSplashScreenBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,15 +17,15 @@ class WeatherInfoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentWeatherInfoBinding.inflate(inflater, container, false)
+        _binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.placeholderButton.setOnClickListener {
-            val action = WeatherInfoFragmentDirections.actionWeatherInfoFragmentToSoilInfoFragment()
+        binding.toLoginScreenButton.setOnClickListener {
+            val action = SplashScreenFragmentDirections.actionSplashScreenFragmentToLoginFragment()
             this.findNavController().navigate(action)
         }
     }
@@ -34,5 +33,4 @@ class WeatherInfoFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
     }
-
 }

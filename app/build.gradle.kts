@@ -36,6 +36,12 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    packaging {
+        resources {
+            excludes += "META-INF/io.netty.versions.properties"
+            excludes += "META-INF/INDEX.LIST"
+        }
+    }
     buildFeatures {
         viewBinding = true
     }
@@ -53,4 +59,8 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.9.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.9.6")
+
+    implementation("com.hivemq:hivemq-mqtt-client:1.3.5")
+    implementation ("io.netty:netty-handler:4.1.94.Final")
+    implementation ("io.netty:netty-tcnative-boringssl-static:2.0.56.Final")
 }

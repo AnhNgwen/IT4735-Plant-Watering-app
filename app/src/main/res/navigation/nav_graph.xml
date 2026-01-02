@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_gragh"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splashScreenFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_mainScreenFragment"
             app:destination="@id/mainScreenFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -32,34 +35,58 @@
         android:label="fragment_main_screen"
         tools:layout="@layout/fragment_main_screen" >
         <action
-            android:id="@+id/action_mainScreenFragment_to_weatherInfoFragment"
-            app:destination="@id/weatherInfoFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/weatherInfoFragment"
-        android:name="com.example.plantwatering.fragments.WeatherInfoFragment"
-        android:label="fragment_weather_info"
-        tools:layout="@layout/fragment_weather_info" >
+            android:id="@+id/action_mainScreenFragment_to_airHumidityFragment"
+            app:destination="@id/airHumidityFragment" />
         <action
-            android:id="@+id/action_weatherInfoFragment_to_soilInfoFragment"
-            app:destination="@id/soilInfoFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/soilInfoFragment"
-        android:name="com.example.plantwatering.fragments.SoilInfoFragment"
-        android:label="fragment_soil_info"
-        tools:layout="@layout/fragment_soil_info" >
+            android:id="@+id/action_mainScreenFragment_to_airTemperatureFragment"
+            app:destination="@id/airTemperatureFragment" />
         <action
-            android:id="@+id/action_soilInfoFragment_to_waterPumpFragment"
+            android:id="@+id/action_mainScreenFragment_to_soilMoistureFragment"
+            app:destination="@id/soilMoistureFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_waterPumpFragment"
             app:destination="@id/waterPumpFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_waterLevelFragment"
+            app:destination="@id/waterLevelFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.plantwatering.fragments.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/airHumidityFragment"
+        android:name="com.example.plantwatering.fragments.AirHumidityFragment"
+        android:label="fragment_air_humidity"
+        tools:layout="@layout/fragment_air_humidity" />
+    <fragment
+        android:id="@+id/airTemperatureFragment"
+        android:name="com.example.plantwatering.fragments.AirTemperatureFragment"
+        android:label="fragment_air_temperature"
+        tools:layout="@layout/fragment_air_temperature" />
+    <fragment
+        android:id="@+id/soilMoistureFragment"
+        android:name="com.example.plantwatering.fragments.SoilMoistureFragment"
+        android:label="fragment_soil_moisture"
+        tools:layout="@layout/fragment_soil_moisture" />
     <fragment
         android:id="@+id/waterPumpFragment"
         android:name="com.example.plantwatering.fragments.WaterPumpFragment"
         android:label="fragment_water_pump"
-        tools:layout="@layout/fragment_water_pump" >
-        <action
-            android:id="@+id/action_waterPumpFragment_to_mainScreenFragment"
-            app:destination="@id/mainScreenFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_water_pump" />
+    <fragment
+        android:id="@+id/waterLevelFragment"
+        android:name="com.example.plantwatering.fragments.WaterLevelFragment"
+        android:label="fragment_water_level"
+        tools:layout="@layout/fragment_water_level" />
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.plantwatering.fragments.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
 </navigation>

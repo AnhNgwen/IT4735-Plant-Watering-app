@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.plantwatering.databinding.FragmentWaterPumpBinding
+import com.example.plantwatering.databinding.FragmentAirHumidityBinding
 
-class WaterPumpFragment : Fragment() {
+class AirHumidityFragment : Fragment() {
 
-    private var _binding: FragmentWaterPumpBinding? = null
+    private var _binding: FragmentAirHumidityBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class WaterPumpFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentWaterPumpBinding.inflate(inflater, container, false)
+        _binding = FragmentAirHumidityBinding.inflate(inflater, container, false)
         return binding.root
     }
 

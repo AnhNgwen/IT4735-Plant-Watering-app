@@ -18,14 +18,57 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/placeholder_button"
+        android:id="@+id/btnSend"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Next Screen Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_input_placeholder" />
+        app:layout_constraintTop_toBottomOf="@id/text_input_placeholder"
+        android:text="Send MQTT" />
 
+    <Button
+        android:id="@+id/to_air_temp_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Air Temperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSend" />
+
+    <Button
+        android:id="@+id/to_air_humid_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Air Humidity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/to_air_temp_button" />
+
+    <Button
+        android:id="@+id/to_soil_moist_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Soil Moisture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/to_air_humid_button" />
+
+    <Button
+        android:id="@+id/to_water_pump_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Water Pump"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/to_soil_moist_button" />
+
+    <Button
+        android:id="@+id/to_water_level_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Water Level"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/to_water_pump_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

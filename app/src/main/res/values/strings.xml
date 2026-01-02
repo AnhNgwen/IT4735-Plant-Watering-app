@@ -8,4 +8,5 @@
     <string name="button_register">ĐĂNG KÝ TÀI KHOẢN</string>
     <string name="password_confirm_label">Nhập lại mật khẩu</string>
     <string name="confirm">XÁC NHẬN</string>
+    <string name="button_forget_password">QUÊN MẬT KHẨU</string>
 </resources>

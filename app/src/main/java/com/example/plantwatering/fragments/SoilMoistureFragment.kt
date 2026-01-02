@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.plantwatering.databinding.FragmentSoilInfoBinding
+import com.example.plantwatering.databinding.FragmentSoilMoistureBinding
 
-class SoilInfoFragment : Fragment() {
+class SoilMoistureFragment : Fragment() {
 
-    private var _binding: FragmentSoilInfoBinding? = null
+    private var _binding: FragmentSoilMoistureBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,17 +17,12 @@ class SoilInfoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSoilInfoBinding.inflate(inflater, container, false)
+        _binding = FragmentSoilMoistureBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.placeholderButton.setOnClickListener {
-            val action = SoilInfoFragmentDirections.actionSoilInfoFragmentToWaterPumpFragment()
-                this.findNavController().navigate(action)
-        }
     }
 
     override fun onDestroyView() {

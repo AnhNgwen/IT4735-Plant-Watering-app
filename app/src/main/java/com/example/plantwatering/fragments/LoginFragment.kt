@@ -33,6 +33,10 @@ class LoginFragment : Fragment() {
             val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
             this.findNavController().navigate(action)
         }
+        binding.forgetPasswordButton.setOnClickListener {
+            val action = LoginFragmentDirections.actionLoginFragmentToForgetPasswordFragment()
+            this.findNavController().navigate(action)
+        }
     }
 
     override fun onDestroyView() {
