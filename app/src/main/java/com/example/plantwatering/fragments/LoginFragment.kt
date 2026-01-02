@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.plantwatering.databinding.FragmentLoginBinding
@@ -29,14 +30,25 @@ class LoginFragment : Fragment() {
             val action = LoginFragmentDirections.actionLoginFragmentToMainScreenFragment()
             this.findNavController().navigate(action)
         }
-        binding.registerButton.setOnClickListener {
+
+        binding.registerTv.setOnClickListener {
             val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
             this.findNavController().navigate(action)
         }
-        binding.forgetPasswordButton.setOnClickListener {
+
+        binding.forgetPasswordTv.setOnClickListener {
             val action = LoginFragmentDirections.actionLoginFragmentToForgetPasswordFragment()
             this.findNavController().navigate(action)
         }
+
+        binding.btnGoogle.setOnClickListener {
+            Toast.makeText(requireContext(), "Đang mở Google Login", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnBack.setOnClickListener {
+            activity?.finish()
+        }
+
     }
 
     override fun onDestroyView() {

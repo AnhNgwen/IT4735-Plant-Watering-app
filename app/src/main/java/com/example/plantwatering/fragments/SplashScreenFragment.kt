@@ -1,6 +1,8 @@
 package com.example.plantwatering.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,10 +26,10 @@ class SplashScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.toLoginScreenButton.setOnClickListener {
-            val action = SplashScreenFragmentDirections.actionSplashScreenFragmentToLoginFragment()
+        val action = SplashScreenFragmentDirections.actionSplashScreenFragmentToLoginFragment()
+        Handler(Looper.getMainLooper()).postDelayed({
             this.findNavController().navigate(action)
-        }
+        }, 3000)
     }
 
     override fun onDestroyView() {
