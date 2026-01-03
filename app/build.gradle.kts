@@ -63,4 +63,7 @@ dependencies {
     implementation("com.hivemq:hivemq-mqtt-client:1.3.5")
     implementation ("io.netty:netty-handler:4.1.94.Final")
     implementation ("io.netty:netty-tcnative-boringssl-static:2.0.56.Final")
+
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }
