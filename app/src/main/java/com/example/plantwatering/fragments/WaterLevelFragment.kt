@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.plantwatering.HivemqViewModel
 import com.example.plantwatering.databinding.FragmentWaterLevelBinding
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
@@ -18,6 +22,8 @@ import com.github.mikephil.charting.data.LineDataSet
 class WaterLevelFragment : Fragment() {
     private var _binding: FragmentWaterLevelBinding? = null
     private val binding get() = _binding!!
+
+    private val hiveViewModel: HivemqViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,6 +47,8 @@ class WaterLevelFragment : Fragment() {
     // Hardcoded logic
     private fun setupUI() {
         updateWaterUI(75, binding.pbWaterTank, binding.tvWaterPercent, binding.tvWaterStatus)
+        setupButton()
+        binding.btnSaveTankSetupChange.visibility = View.GONE
         setupWaterChart(binding.waterChart)
     }
 
@@ -54,6 +62,34 @@ class WaterLevelFragment : Fragment() {
         } else {
             tvS.text = "An Toàn"
             tvS.setTextColor(Color.parseColor("#2ECC71"))
+        }
+    }
+
+
+    private fun setupButton() {
+        var tankHeight = binding.etTankHeight.hint.toString().toInt()
+        var lowWarning = binding.etLowWarning.hint.toString().toInt()
+
+        binding.etTankHeight.addTextChangedListener { editable ->
+            tankHeight = editable.toString().toIntOrNull() ?: 100
+            binding.btnSaveTankSetupChange.visibility = View.VISIBLE
+        }
+
+        binding.etLowWarning.addTextChangedListener { editable ->
+            lowWarning = editable.toString().toIntOrNull() ?: 20
+            binding.btnSaveTankSetupChange.visibility = View.VISIBLE
+        }
+
+        binding.btnSaveTankSetupChange.setOnClickListener {
+            binding.etTankHeight.hint = "$tankHeight"
+            binding.etLowWarning.hint = "$lowWarning"
+            hiveViewModel.publishMessage("settings/tank_height", "$tankHeight")
+            hiveViewModel.publishMessage("settings/min_water", "$lowWarning")
+            binding.etTankHeight.text?.clear()
+            binding.etLowWarning.text?.clear()
+            binding.btnSaveTankSetupChange.visibility = View.GONE
+
+            Toast.makeText(requireContext(), "Thiết lập bình nước thành công", Toast.LENGTH_SHORT).show()
         }
     }
 

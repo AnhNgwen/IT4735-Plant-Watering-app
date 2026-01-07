@@ -51,6 +51,23 @@
                 android:orientation="vertical"
                 android:padding="32dp">
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chế độ thủ công"
+                        android:textColor="#1D431F"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/swManualMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnPumpPower"
                     style="@style/Widget.MaterialComponents.Button.Icon"
@@ -206,6 +223,26 @@
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnSaveAutoStateChange"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:text="XÁC NHẬN"
+                app:backgroundTint="#1D431F"
+                app:cornerRadius="60dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="4dp"
+                android:padding="16dp" />
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 

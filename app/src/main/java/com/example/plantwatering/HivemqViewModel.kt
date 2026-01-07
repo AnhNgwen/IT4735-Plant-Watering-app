@@ -18,8 +18,11 @@ class HivemqViewModel: ViewModel() {
     private val _connectionStatus = MutableLiveData<Boolean>(false)
     val connectionStatus: LiveData<Boolean> = _connectionStatus
 
-    private val _pumpStatus = MutableLiveData<Boolean>(false)
-    val pumpStatus: LiveData<Boolean> = _pumpStatus
+    private val _pumpStatus = MutableLiveData<PumpMode>(PumpMode.PUMP_MANUAL)
+    val pumpStatus: LiveData<PumpMode> = _pumpStatus
+
+    private val _isPumpOn = MutableLiveData<Boolean>(false)
+    val isPumpOn: LiveData<Boolean> = _isPumpOn
 
     private val _sensorData = MutableLiveData<SensorData>()
     val sensorData: LiveData<SensorData> = _sensorData
@@ -103,5 +106,13 @@ class HivemqViewModel: ViewModel() {
     private fun mqttDisconnect() {
         client?.toBlocking()?.disconnect()
         _connectionStatus.postValue(false)
+    }
+
+    fun updatePumpStatus(status: PumpMode) {
+        _pumpStatus.value = status
+    }
+
+    fun toggleManualPumpStatus() {
+        _isPumpOn.value = !_isPumpOn.value
     }
 }
